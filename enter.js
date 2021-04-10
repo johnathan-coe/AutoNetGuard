@@ -20,13 +20,11 @@ function enter(prompt, promptNumber) {
             }
     });
 }
-
+url
 // Recognise a prompt image, given its src attribute
 function recognizePrompt(src, promptNumber) {
-    let url = "https://www.bnz.co.nz" + src;
-
     // Run in the context of the page, as our import won't work otherwise
-    window.eval("Tesseract.recognize('" + url + "', 'eng', {})")
+    window.eval("Tesseract.recognize('" + src + "', 'eng', {})")
           .then(({ data: { text } }) => 
              { enter(text, promptNumber); });
 }
