@@ -1,31 +1,32 @@
 // This script populates the table with headings and input boxes
 let tbody = document.getElementById("ng-tablebody");
 
+function newElem(parent, tagName, innerHTML) {
+    let elem = document.createElement(tagName);
+    elem.innerHTML = innerHTML;
+    parent.appendChild(elem);
+
+    return elem;
+}
+
 // Top row
 let alphaHead = ["", "A", "B", "C", "D", "E", "F", "G"];
 alphaHead.forEach((content) => {
-    let elem = document.createElement("th");
-    elem.innerHTML = content;
-
-    tbody.children[0].appendChild(elem);
+    newElem(tbody.children[0], "th", content);
 });
 
 // For every row after
 for (let i=1; i<=7; i++) {
     // First column is a header
-    let head = document.createElement("th");
-    head.innerHTML = i;
-    tbody.children[i].appendChild(head);
+    newElem(tbody.children[i], "th", i);
 
     // Populate with inputs
     for (let j=1; j<8; j++) {
         // Cell containing the input box
-        let cell = document.createElement("td");
-        tbody.children[i].appendChild(cell);
+        let cell = newElem(tbody.children[i], "td", "")
 
         // The input field itself
-        let entry = document.createElement("input");
-        cell.appendChild(entry);
+        let entry = newElem(cell, "input", "");
 
         // Make the inputs only accept a single character
         entry.setAttribute('maxlength', 1);
