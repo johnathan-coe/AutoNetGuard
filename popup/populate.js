@@ -1,6 +1,7 @@
 // This script populates the table with headings and input boxes
 let tbody = document.getElementById("ng-tablebody");
 
+// Create a new element given a parent element, tag name and inner HTML
 function newElem(parent, tagName, innerHTML) {
     let elem = document.createElement(tagName);
     elem.innerHTML = innerHTML;
