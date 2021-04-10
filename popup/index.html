@@ -5,24 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoNetGuard</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!-- This table is populated on page load by populate.js -->
-    <table>
-        <tbody id="ng-tablebody">
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-        </tbody>
-    </table>
+    <div id="header">
+        <h2>AutoNetGuard</h2>
+    </div>
 
-    <br />
-    <button id="store-button">Store</button>
+    <div id="content">
+        <p>Enter the content of your NetGuard card below,<br/>then click the 'Save' button.</p>
+
+        <br/>
+
+        <!-- This table is populated on page load by populate.js -->
+        <table>
+            <tbody id="ng-tablebody">
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+        </table>
+
+        <br/>
+    </div>
+
+    <div id="footer">
+        <button id="store-button">Save</button>
+    </div>
 
     <script src="populate.js"></script>
     <script src="store.js"></script>
