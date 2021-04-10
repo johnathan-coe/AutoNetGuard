@@ -1,3 +1,7 @@
+/**
+ * The script injected into the BNZ website when prompted for a NetGuard card
+ */
+
 // Include an OCR library (Tesseract)
 var imported = document.createElement('script');
 imported.src = 'https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js';

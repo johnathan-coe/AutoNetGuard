@@ -1,4 +1,8 @@
-// This script populates the table with headings and input boxes
+/**
+ * Populates the table in 'index.html' with headers, input fields and data from local storage. 
+ */
+
+
 let tbody = document.getElementById("ng-tablebody");
 
 // Create a new element given a parent element, tag name and inner HTML

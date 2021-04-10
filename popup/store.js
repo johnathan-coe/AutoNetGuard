@@ -1,3 +1,7 @@
+/**
+ * Takes the imput data from 'index.html' and places it in local storage.
+ */
+
 let storeButton = document.getElementById("store-button");
 
 // Stores the content of the table in local storage
