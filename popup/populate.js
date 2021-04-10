@@ -30,6 +30,17 @@ for (let i=1; i<=7; i++) {
         entry.setAttribute('size', 1);
 
         // Set the name of the input to its co-ordinate
-        entry.setAttribute('name', alphaHead[j]+i);
+        entry.setAttribute('id', alphaHead[j]+i);
     }
 }
+
+// Get all defined values from local storage
+let getValues = browser.storage.local.get();
+getValues.then((values) => {
+    for (const key in values) {
+        let input = document.getElementById(key);
+        if (input != null) {
+            input.value = values[key];
+        }
+    }
+});

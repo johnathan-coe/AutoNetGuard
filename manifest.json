@@ -7,6 +7,10 @@
     "description": "A Firefox extension that automatically enters NetGuard credentials when prompted on bnz.co.nz",
     "homepage_url": "https://github.com/johnathan-coe/AutoNetGuard",
     "icons": {},
+
+    "permissions": [
+        "storage"
+    ],
   
     "content_scripts": [
         {
