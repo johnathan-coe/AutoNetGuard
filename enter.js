@@ -20,7 +20,7 @@ function enter(prompt, promptNumber) {
             }
     });
 }
-url
+
 // Recognise a prompt image, given its src attribute
 function recognizePrompt(src, promptNumber) {
     // Run in the context of the page, as our import won't work otherwise
