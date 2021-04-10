@@ -4,8 +4,17 @@ imported.src = 'https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js';
 document.head.appendChild(imported);
 
 // Take the prompt, lookup in table, place in appropriate box
-function enter(prompt, promptNumber) {
-    console.log(promptNumber + ":" + prompt);
+function enter(prompt, promptNumber) {    
+    let getVal = browser.storage.local.get();
+    let key = prompt.toUpperCase().trim().slice(-2);
+
+    getVal.then(
+        (val) => {
+            let input = document.getElementById("response"+promptNumber)
+            input.setAttribute('placeholder', val[key])
+        },
+        (error) => {}
+    );
 }
 
 // Recognise a prompt image, given its src attribute
@@ -30,5 +39,9 @@ function run() {
 }
 
 // Script is run on document idle, we need to wait a bit for the netguard interface to load in
-// We'll find a more elegant solution at some point...
-setTimeout(run, 3000);
+let readyCheck = setInterval(function() {
+    if (document.getElementById("response1") != undefined) {
+       run();
+       clearInterval(readyCheck);
+    }
+ }, 100);
