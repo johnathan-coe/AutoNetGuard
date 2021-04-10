@@ -1,13 +1,34 @@
-function enter() {
-    // Find the relevant prompt images
-    // Run through OCR
-    
-}
-
 // Include an OCR library (Tesseract)
 var imported = document.createElement('script');
-imported.src = 'https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js';
+imported.src = 'https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js';
 document.head.appendChild(imported);
 
-// On page load, run the script
-object.addEventListener("load", enter);
+// Take the prompt, lookup in table, place in appropriate box
+function enter(prompt, promptNumber) {
+    console.log(promptNumber + ":" + prompt);
+}
+
+// Recognise a prompt image, given its src attribute
+function recognizePrompt(src, promptNumber) {
+    let url = "https://www.bnz.co.nz" + src;
+
+    // Run in the context of the page, as our import won't work otherwise
+    window.eval("Tesseract.recognize('" + url + "', 'eng', {})")
+          .then(({ data: { text } }) => 
+             { enter(text, promptNumber); });
+}
+
+function run() {
+    console.log("Running");
+
+    // For all three buttons
+    for (let i = 1; i < 4; i++) {
+        let src = document.getElementById("response"+i).parentElement.children[0].children[0].getAttribute("src");
+        recognizePrompt(src, i);
+    }
+
+}
+
+// Script is run on document idle, we need to wait a bit for the netguard interface to load in
+// We'll find a more elegant solution at some point...
+setTimeout(run, 3000);
