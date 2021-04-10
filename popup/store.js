@@ -1,3 +1,5 @@
+let storeButton = document.getElementById("store-button");
+
 // Stores the content of the table in local storage
 function store() {
     console.log("Storing NetGuard details...");
@@ -14,7 +16,8 @@ function store() {
         })
     })
 
-    document.getElementsByTagName("button")[0].style.color = "green";
+    // Indicate that we're done
+    storeButton.style.color = "green";
 }
 
-document.getElementsByTagName("button")[0].onclick = store;
+storeButton.onclick = store;
