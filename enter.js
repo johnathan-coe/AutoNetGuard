@@ -5,18 +5,16 @@ document.head.appendChild(imported);
 
 // Take the prompt, lookup in table, place in appropriate box
 function enter(prompt, promptNumber) {    
-    let getVal = browser.storage.local.get();
     let key = prompt.toUpperCase().trim().slice(-2);
 
+    let getVal = browser.storage.local.get(key);
     getVal.then(
         (val) => {
             let input = document.getElementById("response"+promptNumber)
             if (val[key] != undefined) {
                 input.setAttribute('placeholder', val[key])
             }
-        },
-        (error) => {}
-    );
+    });
 }
 
 // Recognise a prompt image, given its src attribute
