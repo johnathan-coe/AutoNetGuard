@@ -15,9 +15,8 @@ function enter(prompt, promptNumber) {
     getVal.then(
         (val) => {
             let input = document.getElementById("response"+promptNumber)
-            if (val[key] != undefined) {
-                input.setAttribute('placeholder', val[key])
-            }
+            let out = (val[key] == undefined) ? "?" : val[key];
+            input.setAttribute('placeholder', out)
     });
 }
 
