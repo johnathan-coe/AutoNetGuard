@@ -1,0 +1,18 @@
+{
+
+    "manifest_version": 2,
+    "name": "AutoNetGuard",
+    "version": "1.0",
+  
+    "description": "A Firefox extension that automatically enters NetGuard credentials when prompted on bnz.co.nz",
+    "homepage_url": "https://github.com/johnathan-coe/AutoNetGuard",
+    "icons": {},
+  
+    "content_scripts": [
+        {
+          "matches": ["*://www.bnz.co.nz/client/"],
+          "js": ["enter.js"]
+        }
+      ]
+  }
+  
