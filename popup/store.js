@@ -1,6 +1,6 @@
 // Stores the content of the table in local storage
 function store() {
-    console.log("storing");
+    console.log("Storing NetGuard details...");
 
     // Throw all the values into local storage
     ["A", "B", "C", "D", "E", "F", "G"].forEach((i) => {
@@ -9,7 +9,6 @@ function store() {
             let value = document.getElementById(key).value.toUpperCase();
             
             if (value != "") {
-                console.log(key + value);
                 browser.storage.local.set({[key]: value});
             }
         })
