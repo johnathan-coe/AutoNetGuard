@@ -16,14 +16,16 @@ alphaHead.forEach((content) => {
 });
 
 // For every row after
-for (let i=1; i<=7; i++) {
+for (let row=1; row<8; row++) {
+    let tr = tbody.children[row];
+
     // First column is a header
-    newElem(tbody.children[i], "th", i);
+    newElem(tr, "th", row);
 
     // Populate with inputs
-    for (let j=1; j<8; j++) {
+    for (let col=1; col<8; col++) {
         // Cell containing the input box
-        let cell = newElem(tbody.children[i], "td", "")
+        let cell = newElem(tr, "td", "")
 
         // The input field itself
         let entry = newElem(cell, "input", "");
@@ -33,7 +35,7 @@ for (let i=1; i<=7; i++) {
         entry.setAttribute('size', 1);
 
         // Set the id of the input to its co-ordinate
-        entry.setAttribute('id', alphaHead[j]+i);
+        entry.setAttribute('id', alphaHead[col]+row);
     }
 }
 
