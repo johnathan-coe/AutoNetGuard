@@ -14,6 +14,12 @@
           "js": ["enter.js"],
           "run_at": "document_idle"
         }
-      ]
+      ],
+
+      "browser_action": {
+        "default_icon": "popup/icons/icon32.png",
+        "default_title": "AutoNetGuard",
+        "default_popup": "popup/index.html"
+      }
   }
   
