@@ -2,10 +2,8 @@
  * The script injected into the BNZ website when prompted for a NetGuard card
  */
 
-// Include an OCR library (Tesseract)
-var imported = document.createElement('script');
-imported.src = 'https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js';
-document.head.appendChild(imported);
+// Require tesseract using Browserify
+let Tesseract = require("tesseract.js");
 
 // Take the prompt, lookup in table, place in appropriate box
 function enter(prompt, promptNumber) {    
@@ -22,10 +20,8 @@ function enter(prompt, promptNumber) {
 
 // Recognise a prompt image, given its src attribute
 function recognizePrompt(src, promptNumber) {
-    // Run in the context of the page, as our import won't work otherwise
-    window.eval("Tesseract.recognize('" + src + "', 'eng', {})")
-          .then(({ data: { text } }) => 
-             { enter(text, promptNumber); });
+    Tesseract.recognize(src, 'eng', {}).then(
+        ({ data: { text } }) => { enter(text, promptNumber); });
 }
 
 function run() {

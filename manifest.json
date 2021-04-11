@@ -8,6 +8,12 @@
     "homepage_url": "https://github.com/johnathan-coe/AutoNetGuard",
     "icons": {},
 
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "AutoNetGuard@johnathan.co.nz"
+      }
+    },
+
     "permissions": [
         "storage"
     ],
@@ -15,7 +21,7 @@
     "content_scripts": [
         {
           "matches": ["*://www.bnz.co.nz/client/"],
-          "js": ["enter.js"],
+          "js": ["bundle.js"],
           "run_at": "document_idle"
         }
       ],
