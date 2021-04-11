@@ -3,14 +3,10 @@
  */
 
 let storeButton = document.getElementById("store-button");
-let footer = document.getElementById("footer");
 
 // Stores the content of the table in local storage
 function store() {
     console.log("Storing NetGuard details...");
-
-    // If the user sees a red footer, something has gone wrong
-    footer.style.background = "red";
 
     // Throw all the values into local storage
     ["A", "B", "C", "D", "E", "F", "G"].forEach((i) => {
@@ -25,7 +21,7 @@ function store() {
     })
 
     // If the user sees a green footer, we haven't encountered an error
-    footer.style.background = "green";
+    storeButton.style.background = "#12bc00";
 }
 
 storeButton.onclick = store;

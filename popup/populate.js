@@ -42,6 +42,9 @@ for (let row=1; row<8; row++) {
         // Set the id of the input to its co-ordinate
         entry.setAttribute('id', alphaHead[col]+row);
     }
+
+    // Extra element for padding
+    newElem(tr, "td", "")
 }
 
 // Get all defined values from local storage

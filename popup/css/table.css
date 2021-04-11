@@ -1,0 +1,49 @@
+table {
+    /* Center align */
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 5px;
+    background:#6200EE;
+}
+
+th {
+    font-weight: 600;
+}
+
+/* Padding to make the border rounding look good.
+    The last row and column in a row are used for this purpose. */
+tr:last-child {
+    height: 2px;
+}
+
+td:last-child {
+    width: 1px;
+    background: none !important;
+}
+
+/* Inputs in a table */
+tbody input {
+    text-align: center;
+    border: none;
+}
+
+/* Padding for headings */
+tr:first-child > th {
+    padding: 5px 0px;
+}
+
+th:first-child {
+    padding: 0px 15px;
+}
+
+/* By default, input and cell background is white */
+td, input {
+    background: white;
+}
+
+/* Override this on every second row. */
+tr:nth-child(2n) > td, tr:nth-child(2n) > td > input {
+    background: #ededf0;
+}
+
