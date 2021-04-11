@@ -2,12 +2,10 @@
 A Firefox extension that automatically enters NetGuard credentials when prompted on bnz.co.nz
 
 ## Screenshot
----
 \
 ![Screenshot of the popup window](docs/screenshots/popup.png)
 
 ## Building from source
----
 ### Requirements
 - Node JS
 - npm
